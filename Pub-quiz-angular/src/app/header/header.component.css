@@ -1,0 +1,28 @@
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 1px 4px 10px 0px rgba(104, 89, 89, 0.69);
+    -webkit-box-shadow: 1px 4px 10px 0px rgba(104, 89, 89, 0.69);
+    -moz-box-shadow: 1px 4px 10px 0px rgba(104, 89, 89, 0.69);
+}
+
+.user-profile {
+    color: #3d78cf;
+}
+
+.user-profile:hover {
+    color: #345fa0;
+}
+
+@media(max-width:576px) {
+    .header-container {
+        justify-content: center;
+    }
+    i {
+        padding: 10px 0;
+    }
+}

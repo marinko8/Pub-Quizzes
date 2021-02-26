@@ -1,0 +1,85 @@
+:host {
+    display: block;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 8vw 0;
+    background-image: url("../../../assets/images/create-kviz-bckground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#create-kviz-container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 4vw;
+    background-color: white;
+    border-radius: 25px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+
+#pitanja-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: rgb(94, 93, 93);
+    margin-top: 3vw;
+}
+
+label {
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid cornflowerblue;
+    border-radius: 5px;
+}
+input:focus{
+    outline: none;
+}
+
+
+.odgovor-label {
+    width: 75%;
+    margin-left: 5%;
+}
+
+.odgovor-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.odgovor-container>i {
+    font-size: 25px;
+    color: red;
+}
+
+.add-answer {
+    color: rgb(88, 107, 211);
+    font-size: 25px;
+    margin-left: 5%;
+}
+
+.pitanje-container {
+    margin-top: 30px;
+}
+
+#buttons-container {
+    margin-top: 3vw;
+}
+
+@media(max-width:768px) {
+    #create-kviz-container {
+        width: 90%;
+    }
+}

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 pitanje-container">
+            <p>{{trenutnoPitanje.pitanje.pitanje}}</p>
+            <hr>
+            <div *ngFor="let odgovor of trenutnoPitanje.odgovori" (click)="odgovori(odgovor.id)" class="odgovor">
+                <p
+                    [ngClass]="{'tocan': odgovor.tocno && odgovoreno, 'netocan':krivoOdgovoreno && odabraniOdgovor.id===odgovor.id && odgovoreno}">
+                    {{odgovor.odgovor}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -1,0 +1,9 @@
+:host {         
+  display: block;
+  left: 0;
+  width: 100%;       
+  height: 100vh;  
+  background-image: url("../../../assets/images/signin-bckground.jpg");
+  background-size: cover;
+  padding-top: 15vh;
+}

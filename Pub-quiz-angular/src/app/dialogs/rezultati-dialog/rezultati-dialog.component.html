@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Završili ste kviz!</h2>
+<hr>
+<mat-dialog-content>
+<p *ngIf="data.rezultat.username!=='neprijavljen'">{{data.rezultat.username}}</p>
+<p>Broj bodova: {{data.rezultat.bodovi | number:'1.1-1'}}  /  {{data.ukupnoBodova | number:'1.1-1'}}</p>
+
+<div>
+    Tezina: <mat-slider min="1" max="5" step="1" [(value)]="tezina"></mat-slider>
+</div>
+<div>
+    Ocjena: <mat-slider min="1" max="5" step="1" [(value)]="ocjena"></mat-slider>
+</div>
+
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button (click)="kraj()" class="button btn-green">Kraj</button>
+</mat-dialog-actions>

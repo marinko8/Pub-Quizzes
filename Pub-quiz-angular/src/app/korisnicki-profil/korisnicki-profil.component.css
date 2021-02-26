@@ -1,0 +1,109 @@
+#header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 50px;
+    box-shadow: 1px 4px 10px 0px rgba(104, 89, 89, 0.69);
+    -webkit-box-shadow: 1px 4px 10px 0px rgba(104, 89, 89, 0.69);
+    -moz-box-shadow: 1px 4px 10px 0px rgba(104, 89, 89, 0.69);
+}
+
+#user-details {
+    width: 100%;
+    padding: 40px 10vw;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#avatar {
+    width: 100px;
+    height: auto;
+    margin: 20px;
+}
+
+.detail-box {
+    width: 90px;
+}
+
+.detail-box>p {
+    width: 100%;
+    text-align: center;
+    color: #3f3f3f;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+#user-kviz-header {
+    width: 100%;
+    margin: 5vw 0;
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#user-kviz-header>p {
+    font-size: 23px;
+    margin: 0;
+    color: #3f3f3f;
+    text-transform: uppercase;
+}
+
+.kviz-box {
+    padding: 50px;
+    background-color: rgb(139, 158, 216);
+    margin-bottom: 50px;
+    box-shadow: 10px 10px 31px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 31px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 31px -5px rgba(0, 0, 0, 0.75);
+}
+
+#paginator {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 15vh;
+}
+
+.details {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+i {
+    padding: 10px 0;
+}
+
+@media(max-width:576px) {
+    #header-container {
+        justify-content: center;
+    }
+    .kviz-box>h2 {
+        text-align: center;
+    }
+    .kviz-box>button {
+        display: block;
+        margin: 0 auto;
+    }
+    i {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+}
+
+@media(max-width:768px) {
+    .detail-box {
+        width: 90%;
+    }
+    #user-details {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,39 @@
+<app-header [username]="username"></app-header>
+<div class="container">
+  <div class="row" id="quote-container" *ngIf="p===1">
+    <h3 id="quote">“I have always thirsted for knowledge, I have always been full of questions.”</h3>
+    <h3 id="quote-author">Hermann Hesse</h3>
+  </div>
+  <div class="row" id="kategorije-container">
+    <mat-form-field appearance="fill">
+      <mat-select [(value)]="odabranaKategorija" name="kategorija">
+        <mat-option *ngFor="let kategorija of kategorije" [value]="kategorija.id">
+          {{kategorija.naziv}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button (click)="filtriraj()" class="button btn-green">Filtriraj</button>
+  </div>
+  <div class="row justify-content-center kvizovi-container">
+    <div class="col-12 kviz-box" data-aos="fade-right"
+      *ngFor="let kviz of kvizovi | paginate: { id: 'server', itemsPerPage: 5, currentPage: p, totalItems: total }">
+      <h2>{{kviz.naziv}}</h2>
+      <div class="details">
+        <i class="fa fa-user fa-2x"> {{kviz.autor}}</i>
+        <i class="fa fa-sitemap fa-2x" *ngIf="kviz.kategorija.naziv!=='Sve kategorije'"> {{kviz.kategorija.naziv}}</i>
+        <i class="fa fa-star fa-2x">  {{kviz.zbroj_ocjena/kviz.broj_ocjena | number:'1.1-1'}}</i>
+        <i class="fa fa-balance-scale fa-2x">  {{kviz.zbroj_ocjena_tezine/kviz.broj_ocjena_tezine | number:'1.1-1'}}</i>
+        <i class="fa fa-users fa-2x">  {{kviz.broj_rjesenja}}</i>
+        <i class="fa fa-question fa-2x">  {{kviz.broj_pitanja}}</i>
+      </div>
+      <button class="button btn-blue" (click)="otvoriKviz(kviz.id)">
+        Otvori
+      </button>
+      <hr>
+    </div>
+  </div>
+  <div class="row" id="paginator">
+    <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+  </div>
+</div>
+<app-footer></app-footer>

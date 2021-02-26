@@ -1,0 +1,73 @@
+.kviz-box {
+    padding: 50px;
+    background-color: rgb(139, 158, 216);
+    margin-bottom: 50px;
+    box-shadow: 10px 10px 31px -5px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 31px -5px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 31px -5px rgba(0, 0, 0, 0.75);
+}
+
+#quote-container {
+    margin-top: 10vh;
+}
+
+#quote {
+    font-style: italic;
+    color: #6b6d72;
+}
+
+#quote-author {
+    color: #6b6d72;
+    text-align: right;
+    width: 100%;
+}
+
+#kategorije-container {
+    margin: 5vh 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#paginator {
+    display: flex;
+    justify-content: right;
+    margin-bottom: 15vh;
+}
+
+.details {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+i {
+    padding: 10px 0;
+}
+
+@media(max-width: 576px) {
+    .kviz-box>h2 {
+        text-align: center;
+    }
+    .kviz-box>button {
+        display: block;
+        margin: 0 auto;
+    }
+    i {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .details {
+        flex-wrap: wrap;
+    }
+    mat-form-field {
+        width: 100%;
+    }
+    #kategorije-container {
+        justify-content: center;
+    }
+}

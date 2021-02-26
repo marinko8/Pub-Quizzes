@@ -1,0 +1,70 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.button {
+  color: aliceblue;
+  border: 1px solid;
+  border-radius: 4px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  line-height: 24px;
+  text-transform: uppercase;
+  padding: 3px 16px;
+  opacity: 1;
+  margin: 10px;
+  box-shadow: 7px 5px 13px 0px rgba(0, 0, 0, 0.43);
+  -webkit-box-shadow: 7px 5px 13px 0px rgba(0, 0, 0, 0.43);
+  -moz-box-shadow: 7px 5px 13px 0px rgba(0, 0, 0, 0.43);
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.btn-green {
+  background-color: #3bca5a;
+}
+
+.btn-green:hover {
+  background-color: #2fa348;
+}
+
+.btn-blue {
+  background-color: #3d78cf;
+}
+
+.btn-blue:hover {
+  background-color: #345fa0;
+}
+
+.btn-red {
+  background-color: #db3232;
+}
+
+.btn-red:hover {
+  background-color: rgb(180, 38, 38);
+}
+
+a:hover {
+  text-decoration: none;
+}

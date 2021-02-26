@@ -1,0 +1,43 @@
+.login-section{
+    margin-top: 150px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.login-image{
+    height: 100vh;
+    background-image: url('../../../assets/images/login-bckground.jpg');
+    background-size: cover;
+}
+
+.login-failed{
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    width: 65%;    
+}
+
+.login-failed-text{
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bold;    
+}
+
+@media(max-width:768px){
+    .login-section{
+        margin: auto 15px;
+    }
+    .login-image{
+        display: none;
+    }
+    :host {         
+        display: block;
+        left: 0;
+        width: 100%;       
+        height: 100vh;  
+        background-image: url("../../../assets/images/login-bckground.jpg");
+        background-size: cover;
+        padding-top: 15vh;
+      }
+}

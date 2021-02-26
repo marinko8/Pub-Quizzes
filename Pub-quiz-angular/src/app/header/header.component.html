@@ -1,0 +1,5 @@
+<div class="header-container">
+    <button (click)="login()" *ngIf="username==='neprijavljen'" class="button btn-green">Prijava</button>
+    <i (click)="profil()" class="fa fa-user fa-2x user-profile" *ngIf="username!=='neprijavljen'"> {{username}}</i>
+    <button (click)="odjava()" *ngIf="username!=='neprijavljen'" class="button btn-red">Odjava</button>
+</div>

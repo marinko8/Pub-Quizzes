@@ -1,0 +1,49 @@
+<div id="header-container">
+  <button class="button btn-blue" (click)="otvoriKvizove()">Kvizovi</button>
+  <button class="button btn-red" (click)="odjava()">Odjava</button>
+</div>
+<div id="user-details">
+  <img src="../../assets/images/avatar.svg" alt="avatar" id="avatar">
+  <h3>{{username}}</h3>
+  <div class="detail-box">
+    <p>broj bodova</p>
+    <p>{{bodovi}}</p>
+  </div>
+  <div class="detail-box">
+    <p>odigrani kvizovi</p>
+    <p>{{brojOdigranihKvizova}}</p>
+  </div>
+  <div class="detail-box">
+    <p>kreirani kvizovi</p>
+    <p>{{brojKreiranihKvizova}}</p>
+  </div>
+</div>
+<hr>
+<div id="user-kviz-header">
+  <p>Vaši kvizovi</p>
+  <button class="button btn-green" (click)="noviKviz()" style="margin-left: 0;">Novi kviz</button>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center kvizovi-container">
+    <div class="col-12 kviz-box" data-aos="fade-right"
+      *ngFor="let kviz of kvizovi | paginate: { id: 'server', itemsPerPage: 5, currentPage: p, totalItems: total }">
+      <h2>{{kviz.naziv}}</h2>
+      <div class="details">
+        <i class="fa fa-sitemap fa-2x" *ngIf="kviz.kategorija.naziv!=='Sve kategorije'"> {{kviz.kategorija.naziv}}</i>
+        <i class="fa fa-star fa-2x">  {{kviz.zbroj_ocjena/kviz.broj_ocjena | number:'1.1-1'}}</i>
+        <i class="fa fa-balance-scale fa-2x">  {{kviz.zbroj_ocjena_tezine/kviz.broj_ocjena_tezine | number:'1.1-1'}}</i>
+        <i class="fa fa-users fa-2x">  {{kviz.broj_rjesenja}}</i>
+        <i class="fa fa-question fa-2x">  {{kviz.broj_pitanja}}</i>
+      </div>
+      <button class="button btn-red" (click)="obrisiKviz(kviz.id)">
+        Izbriši
+      </button>
+      <hr>
+    </div>
+  </div>
+  <div class="row" id="paginator">
+    <pagination-controls (pageChange)="getPage($event)" id="server"></pagination-controls>
+  </div>
+</div>
+<app-footer></app-footer>

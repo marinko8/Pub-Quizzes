@@ -1,0 +1,32 @@
+.footer-container {
+    width: 100%;
+    background-color: #484c54;
+    padding: 30px 60px;
+}
+
+.footer-container>p {
+    color: white;
+    font-size: 19px;
+    max-width: 30%;
+}
+
+#copyright {
+    max-width: 100%;
+    text-align: center;
+}
+
+#web-link {
+    font-size: 19px;
+}
+
+#web-link:hover {
+    color: #28b538;
+    text-decoration: none;
+}
+
+@media(max-width:576px) {
+    .footer-container>p {
+        max-width: 100%;
+        text-align: center;
+    }
+}

@@ -1,0 +1,59 @@
+<div class="register-section">
+    <div class="row justify-content-center">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header" style="text-align: center">
+                    <h4>Postani korisnik</h4>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="signupForm" (ngSubmit)="signup()">
+                        <div class="form-group row">
+                            <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'email'" id="email_address" class="form-control"
+                                    name="email-address" required autofocus>
+                                <span *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched">
+                                    E-mail nije valjan
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-4 col-form-label text-md-right">Korisničko ime</label>
+                            <div class="col-md-6">
+                                <input type="text" [formControlName]="'username'" class="form-control" required
+                                    autofocus>
+                                <span *ngIf="!signupForm.get('username').valid && signupForm.get('username').touched">
+                                    Korisničko ime nije valjano
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Lozinka</label>
+                            <div class="col-md-6">
+                                <input type="password" [formControlName]="'password'" id="password" class="form-control"
+                                    name="password" required>
+                                <span *ngIf="!signupForm.get('password').valid && signupForm.get('password').touched">
+                                    Lozinka nije valjana
+                                </span>
+                            </div>
+                        </div>
+
+                       <p *ngIf="registracijaUTijeku">Registracija u tijeku. Molimo pričekajte..</p> 
+                        <p *ngIf="neuspjesnaRegistracija" >Neuspješna registracija. Moguće da su E-mail ili korisničko ime zauzeti.</p>
+
+                        <span class="col-md-6">
+                            <button type="submit" class="button btn-green">
+                                Registriraj se
+                            </button>
+                            <span style="padding-left: 15px"><a routerLink="/login">Prijava</a></span>
+                        </span>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

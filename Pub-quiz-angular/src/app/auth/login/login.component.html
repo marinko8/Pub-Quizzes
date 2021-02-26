@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-sm-4 col-md-4 col-lg-6 login-image">
+    </div>
+    <div class="col-sm-8 col-md-8 col-lg-6 login-section">
+        <h2 style="text-align: center;">Prijavite se</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <div class="form-group row">
+                <label for="user_name" class="col-md-4 col-form-label text-md-right">Korisničko ime</label>
+                <div class="col-md-6">
+                    <input type="text" id="user_name" class="form-control" [formControlName]="'username'"
+                        name="user_name" required autofocus>
+                    <span *ngIf="!loginForm.get('username').valid && loginForm.get('username').touched">
+                        Korisničko ime nije ispravno
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="password" class="col-md-4 col-form-label text-md-right">Lozinka</label>
+                <div class="col-md-6">
+                    <input type="password" id="password" class="form-control" [formControlName]="'password'"
+                        name="password" required>
+                    <span *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+                        Lozinka ne može ostati prazna
+                    </span>
+                </div>
+            </div>
+
+            <span class="col-md-6  offset-md-2">
+                <button type="submit" class="button btn-green">
+                    Prijava
+                </button>
+                <span style="padding-left: 15px"><a routerLink="/sign-up">Registracija</a></span>
+            </span>
+            <div *ngIf='this.isError'>
+                <p >Neuspješna prijava. Molimo pokušajte ponovno</p>
+            </div>
+            <div *ngIf="this.uspjesnaRegistracijaPoruka.length > 0">
+                <p>{{uspjesnaRegistracijaPoruka}}</p>   
+           </div>   
+        </form>
+    </div>
+</div>

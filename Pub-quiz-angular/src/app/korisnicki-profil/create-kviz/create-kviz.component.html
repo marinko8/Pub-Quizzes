@@ -1,0 +1,52 @@
+<div id="create-kviz-container">
+  <form [formGroup]="kvizForm" (ngSubmit)="submit()">
+    <label>
+      <input formControlName="nazivKviza" placeholder="Naziv kviza" />
+    </label>
+
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-select [(value)]="odabranaKategorija" name="kategorija">
+          <mat-option *ngFor="let kategorija of kategorije" [value]="kategorija.naziv">
+            {{kategorija.naziv}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <p id="pitanja-title">Pitanja</p>
+    <hr>
+    <div formArrayName="pitanja">
+      <div *ngFor="let pitanje of getPitanja.controls; let pitanjeIndex=index" class="pitanje-container"
+        [formGroupName]="pitanjeIndex">
+        <label>
+          <input formControlName="nazivPitanja" placeholder="Pitanje" />
+        </label>
+
+        <button type="button" (click)="removePitanje(pitanjeIndex)" class="button btn-red"
+          style="margin-left: 0;">Izbriši pitanje</button>
+
+        <div formArrayName="odgovori">
+          <div *ngFor="let odgovor of pitanje.get('odgovori').controls; let odgovorIndex=index"
+            class="odgovor-container" [formGroupName]="odgovorIndex">
+            <label class="odgovor-label">
+              <input formControlName="nazivOdgovora" placeholder="Odgovor" />
+            </label>
+            <mat-checkbox formControlName="tocno" (change)="tocno(pitanje.controls.odgovori, odgovorIndex)">
+            </mat-checkbox>
+            <i class="fa fa-minus-circle fa-x5" (click)="removeOdgovor(pitanje.controls.odgovori, odgovorIndex)"></i>
+            
+          </div>
+          <i class="fa fa-plus add-answer" (click)="addOdgovor(pitanje.controls.odgovori)"></i>
+        </div>
+      </div>
+      <hr>
+      <button type="button" (click)="addPitanje()" class="button btn-blue" style="margin-left: 0;">Dodaj
+        pitanje</button>
+    </div>
+    <div id="buttons-container">
+      <button type="submit" class="button btn-green" style="margin-left: 0;">Kreiraj</button>
+      <button class="button btn-red" (click)="odbaci()">Odbaci</button>
+    </div>
+  </form>
+</div>
